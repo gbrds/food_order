@@ -18,6 +18,11 @@ ul li b {
   color: #ffc404;
 }
 
+.img {
+  height: 350px;
+  width: 350px;
+}
+
 #main-header {
   display: flex;
   justify-content: space-between;

@@ -1,12 +1,18 @@
 const MealItem = (props) => {
+    const { meal } = props;
+
+    if (!meal) {
+        return <p>Meal data is missing!</p>;
+    }
+
     return (
         <li>
             <article>
-                <img src={require(`../assets/${props.meal.image}`)} alt={props.meal.name}/>
+                <img className="img" src={require(`../assets/${meal.image}`)} alt={meal.name}/>
                 <div>
-                    <h3>{props.meal.name}</h3>
-                    <p>props.meal.price</p>
-                    <p>{props.meal.description}</p>
+                    <h3>{meal.name}</h3>
+                    <p>{new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(meal.price)}</p>
+                    <p>{meal.description}</p>
                 </div>
                 <p>
                     <button >Add to Cart</button>
